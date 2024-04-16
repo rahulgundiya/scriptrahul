@@ -1,0 +1,103 @@
+body{
+    margin-top: 45px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background : lightblue;
+}
+.container{
+    background-color: whitesmoke;
+    padding: 15px;
+    border-radius: 10px;
+    width:60%;
+}
+.registration{
+    font-family:arial;
+    color: gray;
+    border-bottom: 3px;
+    font-size: 30px;
+    margin-bottom: 10px;
+
+}
+form .container2{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+form .container2 .form-control{
+ width:calc(100%/2 - 20px);
+ margin:10px;   
+}
+form .container2 .form-control input{
+    height: 45px;
+    width: 100%;
+   }
+.button{
+    margin-top:10px;
+    width:100%;
+    text-align: center;
+    font-size: 20px;
+    background-color:#7B68EE ;
+    color:white;
+    border: none;
+    height:1cm;
+}
+.button2{
+    margin-top:10px;
+    margin-left: 70px;
+    width:15%;
+    text-align: center;
+    font-size: 15px;
+    background-color:#7B68EE ;
+    color:white;
+    border: none;
+    height:1cm;
+}
+
+
+.editBtn {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+}
+
+.saveChanges_Button {
+    display: none;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+}
+
+.button3{
+    margin-top:10px;
+    margin-left:180px;
+    width:15%;
+    text-align: center;
+    font-size: 15px;
+    background-color:#7B68EE ;
+    color:white;
+    border: none;
+    height:1cm;
+}
+
+   .container .underline {
+    width:45px;
+    height:6px;
+    background-color: #7B68EE;
+    margin: 1px auto 20px auto;
+    border-radius: 5px;
+    margin-left: 4px;
+   }
+
+   form .container2 .form-control .address{
+    font-family:arial;
+    color: gray;
+    border-radius: 5px;
+   }
+
+  form .container2 .form-control .profile{
+    font-family:arial;
+    color: gray;
+    border-radius: 5px;
+   }

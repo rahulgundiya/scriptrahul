@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body background="laptop.png">
+    <div class="container">
+      <div>
+        <div class="login">Log Into Your</div>
+        <div class="login2">Account</div>
+        <h6>
+          You don't have an register?
+          <a href="reg.html">Register</a>
+        </h6>
+      </div>
+      <!-- <form class="form" id="form"> -->
+      <div class="container2">
+        <div class="form-control">
+          <label>Email</label>
+          <input type="text" id="email" placeholder="Enter Your Email" />
+        </div>
+        <div class="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Your Password"
+          />
+        </div>
+        <button type="submit" onclick="loginData()" class="button">
+          Login
+        </button>
+      </div>
+      <!-- </form> -->
+    </div>
+  </body>
+  <script>
+    function loginData() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      if (reg.test(email) == false) {
+        alert("Invalid Email Id");
+        return false;
+      }
+      // if (!email.includes("@")) {
+      //   alert("Invalid email Use @");
+      //   // document.getElementById("email").value.focus();
+      //   return false;
+      // }
+      else if (email == "") {
+        alert("Please Type email");
+        email.focus();
+        return false;
+      }
+
+      if (password == "") {
+        alert("Please Type Password");
+        password.value.focus();
+        return false;
+      }
+      // let user_records=JSON.parse(localStorage.getItem('users')) || [];
+      // console.log("Hii Data" +user_records.email.value);
+      // if (
+      //  user_records.find((user) => {
+      //     return user.email == email && user.password == password;
+      //   })
+      // ) {
+      //   alert('Logged in');
+      //   window.location.replace("http://127.0.0.1:5501/temp.html");
+      //   // do your things here
+      // } else {
+      //     alert('wrong email or password');
+
+      // let login_records = [{}];
+      let login_records = JSON.parse(localStorage.getItem("users"))
+        ? JSON.parse(localStorage.getItem("users"))
+        : [];
+      if (
+        login_records.some((v) => {
+          return v.email == email && v.password == password;
+        })
+      ) {
+        // alert("Login Successfully")
+        let current_login = login_records.filter((v) => {
+          return v.email == email && v.password == password;
+        })[0];
+        localStorage.setItem("userid", current_login.userid);
+        localStorage.setItem("email", current_login.email);
+        localStorage.setItem("password", current_login.password);
+        localStorage.setItem("fullname", current_login.fullname);
+        localStorage.setItem("address", current_login.address);
+        localStorage.setItem("city", current_login.city);
+        localStorage.setItem("mobile", current_login.mobile);
+        localStorage.setItem("stats", current_login.stats);
+        localStorage.setItem("pincode", current_login.pincode);
+
+        //console.log("Hii " + email + password +fullname +address);
+        alert("Login Successfully");
+        //document.write(window.location.hostname);
+        window.location.replace("home.html");
+      } else {
+        alert("login failed Check Email Password");
+        window.location.replace("login.html");
+        //email.value.focus();
+      }
+    }
+  </script>
+</html>
