@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="home.css" />
+    <style>
+      div.mycontainer {
+        width: 100%;
+        overflow: auto;
+        padding-top: 0px;
+      }
+      div.mycontainer button {
+        width: 12%;
+        margin: 0 0 20px;
+        float: right;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="currentId" hidden />
+    </div>
+    <div class="container">
+      <div class="row centered-form">
+        <div
+          class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4"
+        >
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <button
+                type="logout"
+                style="float: right; background-color: lightblue"
+                onclick="logout()"
+              >
+                Logout
+              </button>
+              <form role="form">
+                <div class="mycontainer"></div>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <h6>Profile Details</h6>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name=""
+                        id="fullname"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <h6 style="margin-left: 30px">Address Details</h6>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name=""
+                        id="address"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name=""
+                        id="email"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name=""
+                        id="city"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="password"
+                        name=""
+                        id="password"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name=""
+                        id="stats"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        name=""
+                        id="mobile"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name=""
+                        id="pincode"
+                        class="form-control input-sm"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <div>
+                      <button
+                        type="submit"
+                        name=""
+                        id="edit"
+                        class="form-control1"
+                        onclick="editData()"
+                      >
+                        Edit
+                      </button>
+                      <div class="form4">
+                        <button
+                          type="submit"
+                          class="form2"
+                          id="save"
+                          style="display: none"
+                          onclick="saveUserToStorage()"
+                        >
+                          Save
+                        </button>
+                        <button
+                          type="submit"
+                          id="cancel"
+                          class="form2"
+                          style="display: none"
+                          onclick="cancelData()"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <div class="form-group">
+                    <div>
+                      <button
+                        type="submit"
+                        name=""
+                        id="edit2"
+                        class="form-control1"
+                        onclick="editData2()"
+                      >
+                        Edit
+                      </button>
+                      <div class="form3">
+                        <button
+                          type="submit"
+                          id="save2"
+                          class="form2"
+                          style="display: none"
+                          onclick="saveUserToStorage()"
+                        >
+                          Save
+                        </button>
+                        <button
+                          type="submit"
+                          id="cancel2"
+                          class="form2"
+                          style="display: none"
+                          onclick="cancelData()"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./home.js"></script>
+  </body>
+ 
+</html>
