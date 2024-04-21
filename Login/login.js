@@ -1,20 +1,35 @@
 function loginData() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (reg.test(email)==false) {
-      alert("Invalid Email Id");
-      return false;
-    }
-    else if (email == "") {
-      alert("Please Type email");
-      email.focus();
-      return false;
-    }
-    if (password == "") {
-      alert("Please Type Password");
-      password.value.focus();
-      return false;
+    // var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    // if (reg.test(email)==false) {
+    //   alert("Invalid Email Id");
+    //   return false;
+    // }
+    // else if (email == "") {
+    //   alert("Please Type email");
+    //   email.focus();
+    //   return false;
+    // }
+    // if (password == "") {
+    //   alert("Please Type Password");
+    //   password.value.focus();
+    //   return false;
+    // }
+    switch(true) {
+      case !/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(email):
+        alert("Invalid Email Id");
+        return false;
+      case email == "":
+        alert("Please Type email");
+        email.focus();
+        return false;
+      case password == "":
+        alert("Please Type Password");
+        password.focus();
+        return false;
+      default:
+        break;
     }
     let login_records = JSON.parse(localStorage.getItem("users"))
       ? JSON.parse(localStorage.getItem("users"))
